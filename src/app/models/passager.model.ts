@@ -24,14 +24,14 @@ export enum ClasseVol {
 export interface IPassager {
   nom: string;
   image: string;
-  classeVol: string;
+  classeVol: ClasseVol;
   nbBagagesSoute: number;
 }
 
 export class Passager implements IPassager {
   nom: string;
   image: string;
-  classeVol: string;
+  classeVol: ClasseVol;
   nbBagagesSoute: number;
 
   constructor(dto: IPassagerDto) {
@@ -42,9 +42,12 @@ export class Passager implements IPassager {
   }
 }
 
-export function getRandomClasseVol(): string {
+export function getRandomClasseVol(): ClasseVol {
   // index entre 0 et 3 exclus
-  return ClasseVol[Math.floor(Math.random() * 3)];
+  const enumValues = Object.values(ClasseVol)
+    .filter(k => typeof k === "string") as string[];
+  const randomIndex = Math.floor(Math.random() * enumValues.length);
+  return ClasseVol[enumValues[randomIndex] as keyof typeof ClasseVol];
 }
 
 export function getRandomNombreBagages(): number {

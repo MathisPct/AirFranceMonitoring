@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {Passager} from "../../models/passager.model";
+import {ClasseVol, Passager} from "../../models/passager.model";
 
 @Component({
   selector: 'app-passager',
@@ -8,4 +8,5 @@ import {Passager} from "../../models/passager.model";
 })
 export class PassagerComponent {
   @Input() passager!: Passager;
+  protected readonly ClasseVol = ClasseVol;
 }

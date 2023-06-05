@@ -3,7 +3,7 @@
   <img [src]="passager.image" alt="Image de {{passager.nom}}">
 </div>
 <span>{{passager.nom}}</span>
-<span>{{passager.classeVol}}</span>
+<span [appPassagerClasse]="passager.classeVol">{{ClasseVol[passager.classeVol]}}</span>
 <div class="lugguage-container">
   <div class="icon">
     <span class="material-icons">luggage</span>
