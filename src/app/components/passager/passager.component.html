@@ -1,5 +1,5 @@
 <!-- Affichage d'un passager -->
-<div class="img-container">
+<div class="img-container" *ngIf="canShowAvatar">
   <img [src]="passager.image" alt="Image de {{passager.nom}}">
 </div>
 <span>{{passager.nom}}</span>

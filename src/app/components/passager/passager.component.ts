@@ -8,5 +8,6 @@ import {ClasseVol, Passager} from "../../models/passager.model";
 })
 export class PassagerComponent {
   @Input() passager!: Passager;
+  @Input() canShowAvatar!: boolean | null;
   protected readonly ClasseVol = ClasseVol;
 }
