@@ -1,12 +1,12 @@
 <div class="container">
-  <div class="title"><h1>DECOLLAGES</h1></div>
+  <div class="title"><h1>{{ type | uppercase }}</h1></div>
   <div class="sections">
     <div class="left">
       <div class="top">
         <app-filtres (changeInput)="onFiltresEvent($event)"></app-filtres>
       </div>
       <div class="bottom">
-        <app-liste-vols (clickVol)="selectVol($event)" [vols]="this.vols"></app-liste-vols>
+        <app-liste-vols [type]="type" (clickVol)="selectVol($event)" [vols]="this.vols"></app-liste-vols>
       </div>
     </div>
     <div class="right">

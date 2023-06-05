@@ -22,4 +22,10 @@ export class VolService {
         .map((dto: IVolDto) => new Vol(dto))
     ));
   }
+  getVolsArrivee(code: string, debut: number, fin: number): Observable<Vol[]> {
+    return this.http.get<any>(`https://opensky-network.org/api/flights/arrival?airport=${code}&begin=${debut}&end=${fin}`).pipe(
+      map((response) => response
+        .map((dto: IVolDto) => new Vol(dto))
+      ));
+  }
 }

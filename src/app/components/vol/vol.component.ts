@@ -9,4 +9,7 @@ import {Vol} from "../../models/vol.model";
 export class VolComponent {
   @Input()
   vol!: Vol;
+  @Input()
+  type!: 'decollages' | 'atterissages';
+
 }

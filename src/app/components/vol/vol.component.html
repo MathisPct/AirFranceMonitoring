@@ -1,6 +1,7 @@
 <div class="vol-container">
     <div class="icon">
-        <mat-icon>flight_takeoff</mat-icon>
+        <mat-icon *ngIf="type=='decollages'">flight_takeoff</mat-icon>
+        <mat-icon *ngIf="type=='atterissages'">flight_land</mat-icon>
     </div>
     <span>{{this.vol.icao | uppercase}}</span>
     <span>{{this.vol.matricule | uppercase }}</span>
