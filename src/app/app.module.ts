@@ -26,6 +26,7 @@ import { VolComponent } from './components/vol/vol.component';
 import { HttpFlightInterceptor } from './interceptors/http-flight.interceptor';
 import { PassagerClasseDirective } from './components/passager/directive/passager-classe.directive';
 import { LuggageWeightDirective } from './components/passager/directive/luggage-weight.directive';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 registerLocaleData(localeFr, 'fr');
 
@@ -57,7 +58,8 @@ registerLocaleData(localeFr, 'fr');
     ReactiveFormsModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MatTooltipModule
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'fr' },

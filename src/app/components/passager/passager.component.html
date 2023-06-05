@@ -1,13 +1,16 @@
 <!-- Affichage d'un passager -->
-<div class="img-container" *ngIf="canShowAvatar">
-  <img [src]="passager.image" alt="Image de {{passager.nom}}">
-</div>
-<span>{{passager.nom}}</span>
-<span [appPassagerClasse]="passager.classeVol">{{ClasseVol[passager.classeVol]}}</span>
-<div class="lugguage-container">
-  <div class="icon">
-    <span class="material-icons">luggage</span>
+
+<div class="passager-container" [matTooltip]="this.passager.email">
+  <div class="img-container" *ngIf="canShowAvatar">
+    <img [src]="passager.image" alt="Image de {{passager.nom}}">
   </div>
-  <span [appLuggageWeight]="passager">X {{passager.nbBagagesSoute}}</span>
+  <span>{{passager.nom}}</span>
+  <span [appPassagerClasse]="passager.classeVol">{{ClasseVol[passager.classeVol]}}</span>
+  <div class="lugguage-container">
+    <div class="icon">
+      <span class="material-icons">luggage</span>
+    </div>
+    <span [appLuggageWeight]="passager">X {{passager.nbBagagesSoute}}</span>
+  </div>
 </div>
 
