@@ -25,6 +25,7 @@ import { ViewAirFranceComponent } from './components/view-airfrance/view-airfran
 import { VolComponent } from './components/vol/vol.component';
 import { HttpFlightInterceptor } from './interceptors/http-flight.interceptor';
 import { PassagerClasseDirective } from './components/passager/directive/passager-classe.directive';
+import { LuggageWeightDirective } from './components/passager/directive/luggage-weight.directive';
 
 registerLocaleData(localeFr, 'fr');
 
@@ -38,7 +39,8 @@ registerLocaleData(localeFr, 'fr');
     ListePassagersComponent,
     PassagerComponent,
     ViewAirFranceComponent,
-    PassagerClasseDirective
+    PassagerClasseDirective,
+    LuggageWeightDirective
   ],
   imports: [
     BrowserModule,
