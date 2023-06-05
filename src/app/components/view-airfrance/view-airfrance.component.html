@@ -3,7 +3,7 @@
   <div class="sections">
     <div class="left">
       <div class="top">
-        <app-filtres></app-filtres>
+        <app-filtres (changeInput)="onFiltresEvent($event)"></app-filtres>
       </div>
       <div class="bottom">
         <app-liste-vols></app-liste-vols>
