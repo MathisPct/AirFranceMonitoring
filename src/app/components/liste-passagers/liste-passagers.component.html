@@ -3,4 +3,4 @@
   <mat-slide-toggle id="toggle-show-image" name="toggle-show-image" [formControl]="this.passagersForm.controls.showAvatarOfPassagers"></mat-slide-toggle>
 </label>
 <!-- Affichage de la liste des passagers -->
-<app-passager  *ngFor="let passager of passagers" [passager]="passager" [canShowAvatar]="passagersForm?.controls?.showAvatarOfPassagers?.value ?? false"></app-passager>
+<app-passager  *ngFor="let passager of passagers" [passager]="passager" [canShowAvatar]="passagersForm.controls.showAvatarOfPassagers.value ?? false"></app-passager>
