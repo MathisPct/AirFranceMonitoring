@@ -9,6 +9,9 @@ import {IFiltres} from "../../models/filtres.model";
 })
 export class ListeVolsComponent {
   @Input()
+  type!: 'decollages' | 'atterissages';
+
+  @Input()
   vols! : Vol[];
   @Output()
   clickVol = new EventEmitter<Vol>();

@@ -15,7 +15,7 @@ export class ToolbarComponent {
   }
 
   toAtterrisages(): void {
-    // TODO
+    this._router.navigateByUrl(`/atterissages`)
   }
 
 }
