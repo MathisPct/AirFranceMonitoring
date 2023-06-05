@@ -6,7 +6,7 @@
         <app-filtres (changeInput)="onFiltresEvent($event)"></app-filtres>
       </div>
       <div class="bottom">
-        <app-liste-vols></app-liste-vols>
+        <app-liste-vols [vols]="this.vols"></app-liste-vols>
       </div>
     </div>
     <div class="right">

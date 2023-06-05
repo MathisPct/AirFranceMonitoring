@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {Vol} from "../../models/vol.model";
 
 @Component({
   selector: 'app-vol',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./vol.component.scss']
 })
 export class VolComponent {
-
+  @Input()
+  vol!: Vol;
 }

@@ -25,7 +25,7 @@
     width: 100%;
 
     .left {
-      width: 48%;
+      width: var(--width-left-side);
       height: 100%;
 
       .top {

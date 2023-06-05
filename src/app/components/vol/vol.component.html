@@ -1,1 +1,16 @@
-<!-- Affichage d'un vol -->
+<div class="vol-container">
+    <div class="icon">
+        <mat-icon>flight_takeoff</mat-icon>
+    </div>
+    <span>{{this.vol.icao | uppercase}}</span>
+    <span>{{this.vol.matricule | uppercase }}</span>
+    <span class="journey-container">
+        <span>{{this.vol.aeroportDepart}}</span>
+        <span class="icon">
+            <mat-icon>arrow_right_alt</mat-icon>
+        </span>
+        <span>{{this.vol.aeroportArrivee}}</span>
+    </span>
+    <img src="./assets/{{this.vol.compagnie}}.png" [alt]="this.vol.compagnie" />
+</div>
+

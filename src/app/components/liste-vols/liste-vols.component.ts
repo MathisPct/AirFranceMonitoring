@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {Vol} from "../../models/vol.model";
 
 @Component({
   selector: 'app-liste-vols',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./liste-vols.component.scss']
 })
 export class ListeVolsComponent {
-
+  @Input()
+  vols! : Vol[];
 }
