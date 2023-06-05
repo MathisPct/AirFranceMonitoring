@@ -6,11 +6,11 @@
         <app-filtres (changeInput)="onFiltresEvent($event)"></app-filtres>
       </div>
       <div class="bottom">
-        <app-liste-vols [vols]="this.vols"></app-liste-vols>
+        <app-liste-vols (clickVol)="selectVol($event)" [vols]="this.vols"></app-liste-vols>
       </div>
     </div>
     <div class="right">
-      <app-liste-passagers></app-liste-passagers>
+      <app-liste-passagers [passagers]="passagers"></app-liste-passagers>
     </div>
   </div>
 </div>

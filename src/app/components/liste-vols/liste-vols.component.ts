@@ -1,5 +1,6 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Vol} from "../../models/vol.model";
+import {IFiltres} from "../../models/filtres.model";
 
 @Component({
   selector: 'app-liste-vols',
@@ -9,4 +10,9 @@ import {Vol} from "../../models/vol.model";
 export class ListeVolsComponent {
   @Input()
   vols! : Vol[];
+  @Output()
+  clickVol = new EventEmitter<Vol>();
+  onVolClick(vol: Vol) {
+    this.clickVol.emit(vol);
+  }
 }

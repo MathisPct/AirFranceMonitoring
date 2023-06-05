@@ -1,8 +1,10 @@
 import {Component, OnDestroy} from '@angular/core';
-import { IFiltres } from 'src/app/models/filtres.model';
-import { Vol } from 'src/app/models/vol.model';
-import { VolService } from '../../services/vol.service';
+import {IFiltres} from 'src/app/models/filtres.model';
+import {Vol} from 'src/app/models/vol.model';
+import {VolService} from '../../services/vol.service';
 import {Subscription} from "rxjs";
+import {PassagerService} from "../../services/passager.service";
+import {Passager} from "../../models/passager.model";
 
 @Component({
   selector: 'app-view-airfrance',
@@ -12,8 +14,19 @@ import {Subscription} from "rxjs";
 export class ViewAirFranceComponent implements OnDestroy {
 
   vols: Vol[] = [];
+  passagers: Passager[] = [];
   private _subscriptions: Subscription = new Subscription();
-  constructor(private _volService: VolService) { }
+
+  constructor(private _volService: VolService, private _passagerService: PassagerService) {
+  }
+
+  public selectVol(vol: Vol) {
+    this._passagerService.getPassager(vol.icao).subscribe({
+      next: generatedPassagers => {
+        this.passagers = generatedPassagers
+      }
+    })
+  }
 
   /**
    * Réaction à la mise à jour des filtres
@@ -30,6 +43,6 @@ export class ViewAirFranceComponent implements OnDestroy {
   }
 
   ngOnDestroy(): void {
-      this._subscriptions.unsubscribe();
+    this._subscriptions.unsubscribe();
   }
 }
